@@ -1,0 +1,99 @@
+" vimrc
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" Some bundles:
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'vim-scripts/Zenburn'
+Bundle 'indenthtml.vim'
+Bundle 'abolish.vim'
+
+"" Some basic configuration
+filetype plugin indent on
+set encoding=utf-8
+syntax on
+set t_Co=256
+colorscheme zenburn
+
+"" Functional settings
+set hidden       " Hide buffers, don't close them
+set number       " Line numbers plz
+set showmatch    " Matching parenthesis
+set backspace=eol,start " Backspace!
+set title        " Window title overwrite
+set wildignore=*.swp,*.bak,*.pyc,*.class
+                 " Ignore stupid files
+
+"" Grouped settings
+" Visible whitespace characters
+set list
+set listchars=tab:>»,trail:·,extends:…,eol:¶
+
+" Less annoyances
+set visualbell
+set noerrorbells
+
+" Better history/undo
+set history=1000
+set undolevels=1000
+
+" No mess
+set nobackup
+set noswapfile
+
+" Better indentation
+set tabstop=4
+set autoindent
+set copyindent
+set shiftwidth=4
+set smarttab
+set shiftround
+
+" Better searching
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+
+"" (Re)maps
+" ; is way better than :
+map ; :
+noremap ;; ;
+
+" , is a better leader than \
+let mapleader=","
+
+" Pasting? Press F2 first!
+set pastetoggle=<F2>
+
+" No arrow keys.
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" But Ctrl+Arrow switches between tabs!
+nnoremap <silent> <C-Up> :tabnew<CR>
+nnoremap <silent> <C-Down> :q<CR>
+nnoremap <silent> <C-Right> gt
+nnoremap <silent> <C-Left> gT
+
+" Clear searches
+nmap <silent> ,/ :nohlsearch<CR>
+
+
+" ,ev and ,sv to edit and reload .vimrc
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+"" Plugins
+" Powerline
+set laststatus=2
+let g:Powerline_symbols = 'fancy'

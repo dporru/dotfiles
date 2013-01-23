@@ -1,0 +1,31 @@
+C_N='\[\033[0m\]'    # unsets color to term's fg color']'
+
+# regular colors
+C_K='\[\033[0;30m\]'    # black
+C_R='\[\033[0;31m\]'    # red
+C_G='\[\033[0;32m\]'    # green
+C_Y='\[\033[0;33m\]'    # yellow
+C_B='\[\033[0;34m\]'    # blue
+C_M='\[\033[0;35m\]'    # magenta
+C_C='\[\033[0;36m\]'    # cyan
+C_W='\[\033[0;37m\]'    # white
+
+# emphasized (bolded) colors
+C_EMK='\[\033[1;30m\]'
+C_EMR='\[\033[1;31m\]'
+C_EMG='\[\033[1;32m\]'
+C_EMY='\[\033[1;33m\]'
+C_EMB='\[\033[1;34m\]'
+C_EMM='\[\033[1;35m\]'
+C_EMC='\[\033[1;36m\]'
+C_EMW='\[\033[1;37m\]'
+
+# background colors
+C_BGK='\[\033[40m\]'
+C_BGR='\[\033[41m\]'
+C_BGG='\[\033[42m\]'
+C_BGY='\[\033[43m\]'
+C_BGB='\[\033[44m\]'
+C_BGM='\[\033[45m\]'
+C_BGC='\[\033[46m\]'
+C_BGW='\[\033[47m\]'

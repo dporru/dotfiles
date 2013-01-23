@@ -1,0 +1,38 @@
+#!/bin/sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+function link {
+    read -p "Do you want to link ~/.$1 to ${DIR}/files/$1? "
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        ln -s ${DIR}/files/$1 ~/.$1
+    fi
+}
+
+function remove {
+    read -p "Do you want to remove ~/.$1 (if linked to ${DIR}/files/$1)? "
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        if [[ $(readlink ~/.$1) == "${DIR}/files/$1" ]]
+        then
+            rm -f ~/.$1
+        else
+            echo "~/.$1 not linked to ${DIR}/files/$1 (but to $(readlink ~/.$1)"
+        fi
+    fi
+}
+
+if [[ $1 == "-r" ]]
+then
+    remove bashrc
+    remove bash
+    remove vimrc
+    remove vim
+
+    exit 1
+fi
+
+link bashrc
+link bash
+link vimrc
+link vim
