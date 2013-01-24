@@ -32,11 +32,10 @@ change things to how you like them best. Fork this on Github. Have fun!
 
 Apart from that, the installation steps are currently quite easy:
 
-1. Run `./linking`, this will automatically create symlinks to all files
-  and folders in the files directory in your home directory (so that file
-  is linked to by ~/.file).
+1. Run `./install`, this will walk you through the required steps for installing
+  and configuring these dotfiles.
 2. Modify to your liking.
 
-Uninstalling is as simple as running `./linking -r` which will remove all
+Uninstalling is as simple as running `./install -r` which will remove all
 symlinks in your home directory to files and folders in the files
 directory.
