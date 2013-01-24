@@ -42,7 +42,7 @@ set visualbell
 set noerrorbells
 
 " Colored area after 80th character
-hi ColorColumn ctermfg=188 ctermbg=238
+hi ColorColumn ctermbg=238
 let &colorcolumn=join(range(81,999),",")
 
 " Better history/undo
