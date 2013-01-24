@@ -24,15 +24,13 @@ function remove {
 
 if [[ $1 == "-r" ]]
 then
-    remove bashrc
-    remove bash
-    remove vimrc
-    remove vim
+    for file in ${DIR}/files/*; do
+        remove $(basename $file)
+    done
 
     exit 1
 fi
 
-link bashrc
-link bash
-link vimrc
-link vim
+for file in ${DIR}/files/*; do
+    link $(basename $file)
+done
