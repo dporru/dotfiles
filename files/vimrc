@@ -54,6 +54,7 @@ set nobackup
 set noswapfile
 
 " Better indentation
+set expandtab
 set tabstop=4
 set autoindent
 set copyindent

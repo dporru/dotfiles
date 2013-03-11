@@ -1,0 +1,3 @@
+" CSS has two spaces.
+set tabstop=2
+set shiftwidth=2
