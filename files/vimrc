@@ -35,7 +35,7 @@ set scrolloff=3    " Show three lines below the cursor.
 "" Grouped settings
 " Visible whitespace characters
 set list
-set listchars=tab:>»,trail:·,extends:…,eol:¶
+set listchars=tab:»\ ,trail:·,extends:…,eol:¶
 
 " Less annoyances
 set visualbell
