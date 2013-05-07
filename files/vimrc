@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " Some bundles:
@@ -41,9 +41,11 @@ set listchars=tab:»\ ,trail:·,extends:…,eol:¶
 set visualbell
 set noerrorbells
 
-" Colored area after 80th character
-hi ColorColumn ctermbg=238
-let &colorcolumn=join(range(81,999),",")
+if v:version >= 703
+  " Colored area after 80th character
+  hi ColorColumn ctermbg=238
+  let &colorcolumn=join(range(81,999),",")
+endif
 
 " Better history/undo
 set history=1000
