@@ -13,4 +13,8 @@ alias grep='grep --color=auto'
 alias vi='vim'
 alias pacman='pacman-color'
 alias sudo='sudo '
-PS1="[${C_EMW}\@ ${C_Y}\u@\h${C_N} \w${C_Y}\$(__git_ps1 \" (%s)\")${C_N}]${C_G}\$ ${C_N}"
+export PS1="[${C_EMW}\@ ${C_Y}\u@\h${C_N} \w${C_Y}\$(__git_ps1 \" (%s)\")${C_N}]${C_G}\$ ${C_N}"
+
+# Instant history logging for working with multiple shells and history.
+shopt -s histappend                      # append to history, don't overwrite it
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
