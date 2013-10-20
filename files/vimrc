@@ -110,4 +110,6 @@ set laststatus=2
 " Disable fancy symbols by default.
 "let g:Powerline_symbols = 'fancy'
 
-source ~/.vim_custom
+if filereadable("~/.vim_custom")
+    source ~/.vim_custom
+endif
