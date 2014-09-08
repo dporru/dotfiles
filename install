@@ -32,13 +32,6 @@ then
     exit 1
 fi
 
-read -p "Do you want to install Vundle? "
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    git clone https://github.com/gmarik/vundle.git ${DIR}/files/vim/bundle/vundle
-    vim +BundleInstall +qall
-fi
-
 read -p "Do you want to install the Powerline font patches (Linux only)? "
 if [[ $REPLY =~ ^[Yy]$ ]]
 then

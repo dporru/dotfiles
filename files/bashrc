@@ -13,8 +13,17 @@ alias grep='grep --color=auto'
 alias vi='vim'
 alias pacman='pacman-color'
 alias sudo='sudo '
-export PS1="[${C_EMW}\@ ${C_Y}\u@\h${C_N} \w${C_Y}\$(__git_ps1 \" (%s)\")${C_N}]${C_G}\$ ${C_N}"
+
+export MYPS='$(echo -n "${PWD/#$HOME/~}" | awk -F "/" '"'"'{
+if (length($0) > 14) { if (NF>4) print $1 "/" $2 "/.../" $(NF-1) "/" $NF;
+else if (NF>3) print $1 "/" $2 "/.../" $NF;
+else print $1 "/.../" $NF; }
+else print $0;}'"'"')'
+export PS1="[${C_EMW}\@ ${C_Y}\u@\h${C_N} \$(eval \"echo \${MYPS}\")${C_Y}\$(__git_ps1 \" (%s)\")${C_N}]${C_G}\$ ${C_N}"
 
 # Instant history logging for working with multiple shells and history.
 shopt -s histappend                      # append to history, don't overwrite it
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+alias apt-cyg='apt-cyg -m http://mirrors.kernel.org/sources.redhat.com/cygwin/'
+alias apt-cyp='apt-cyg -m http://mirrors.kernel.org/sources.redhat.com/cygwinports/'
