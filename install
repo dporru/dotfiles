@@ -60,38 +60,38 @@ then
 fi
 
 # LINK
-read -p "Do you want to install the Powerline font patches (Linux only)? "
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    FONTURI=https://github.com/Lokaltog/powerline/raw/develop/font/
-    wget ${FONTURI}PowerlineSymbols.otf \
-        -O ~/.fonts/PowerlineSymbols.otf
-    if [ -d "~/.fonts.conf.d/" ]
-    then
-        DEST="~/.fonts.conf.d/"
-    elif [ -d "~/.config/fontconfig/conf.d/" ]
-    then
-        DEST="~/.config/fontconfig/conf.d/"
-    else
-        DEFAULT="$(echo ~)/.config/fontconfig/conf.d/"
-        read -p "Where should I put 10-powerline-symbols.conf? [${DEFAULT}] "
-        if [[ $REPLY == "" ]]
-        then
-            DEST=$DEFAULT
-        else
-            DEST=$REPLY
-        fi
-    fi
-    if [ ! -d $DEST ]
-    then
-        mkdir --parents $DEST
-    fi
-    wget ${FONTURI}10-powerline-symbols.conf \
-        -O ${DEST}10-powerline-symbols.conf
-
-    echo "You may need to restart your terminal emulator (or even X) before" \
-         " this works"
-fi
+#read -p "Do you want to install the Powerline font patches (Linux only)? "
+#if [[ $REPLY =~ ^[Yy]$ ]]
+#then
+#    FONTURI=https://github.com/Lokaltog/powerline/raw/develop/font/
+#    wget ${FONTURI}PowerlineSymbols.otf \
+#        -O ~/.fonts/PowerlineSymbols.otf
+#    if [ -d "~/.fonts.conf.d/" ]
+#    then
+#        DEST="~/.fonts.conf.d/"
+#    elif [ -d "~/.config/fontconfig/conf.d/" ]
+#    then
+#        DEST="~/.config/fontconfig/conf.d/"
+#    else
+#        DEFAULT="$(echo ~)/.config/fontconfig/conf.d/"
+#        read -p "Where should I put 10-powerline-symbols.conf? [${DEFAULT}] "
+#        if [[ $REPLY == "" ]]
+#        then
+#            DEST=$DEFAULT
+#        else
+#            DEST=$REPLY
+#        fi
+#    fi
+#    if [ ! -d $DEST ]
+#    then
+#        mkdir --parents $DEST
+#    fi
+#    wget ${FONTURI}10-powerline-symbols.conf \
+#        -O ${DEST}10-powerline-symbols.conf
+#
+#    echo "You may need to restart your terminal emulator (or even X) before" \
+#         " this works"
+#fi
 
 for file in ${DIR}/files/*; do
     link $(basename $file)
