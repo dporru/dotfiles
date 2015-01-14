@@ -108,3 +108,6 @@ set laststatus=2
 if filereadable("~/.vim_custom")
     source ~/.vim_custom
 endif
+
+" GitGutter
+highlight clear SignColumn
