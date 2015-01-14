@@ -46,3 +46,17 @@ alias cd="venv_cd"
 
 # fix for gnome-terminal new tab not opening working dir
 . /etc/profile.d/vte.sh
+
+# ssh alias to only use mosh when set in ssh config
+REAL_SSH=$(which ssh)
+ssh_mosher () {
+    local SCRIPT="$REAL_SSH"
+    if [ -n "$(grep -e "^Host $1\$" ~/.ssh/config)" ]; then
+        NEXTLINE=$(awk "/^Host $1$/{getline; print}" ~/.ssh/config | sed -e 's/^ *//' -e 's/ *$//')
+        if [ "$NEXTLINE" == "# mosh" ]; then
+            SCRIPT="mosh"
+        fi
+    fi
+    eval "$SCRIPT $@"
+}
+alias ssh="ssh_mosher"
