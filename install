@@ -26,12 +26,6 @@ do
     esac
 done
 
-if $REMOVE
-then
-    echo "Whoops, I am way too lazy for this."
-    exit 1
-fi
-
 ## FUNCTIONS
 function link {
     read -p "Do you want to link ~/.$1 to ${DIR}/files/$1? "
@@ -56,7 +50,7 @@ function remove {
 
 ## MAIN
 # REMOVE
-if [[ $1 == "-r" ]]
+if $REMOVE
 then
     for file in ${DIR}/files/*; do
         remove $(basename $file)
@@ -102,3 +96,9 @@ fi
 for file in ${DIR}/files/*; do
     link $(basename $file)
 done
+
+read -p "Do you want to install Vim plugins with Plug? "
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    vim +PlugInstall
+fi
