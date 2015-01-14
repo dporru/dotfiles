@@ -25,5 +25,3 @@ export PS1="[${C_EMW}\@ ${C_Y}\u@\h${C_N} \$(eval \"echo \${MYPS}\")${C_Y}\$(__g
 shopt -s histappend                      # append to history, don't overwrite it
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
-alias apt-cyg='apt-cyg -m http://mirrors.kernel.org/sources.redhat.com/cygwin/'
-alias apt-cyp='apt-cyg -m http://mirrors.kernel.org/sources.redhat.com/cygwinports/'
