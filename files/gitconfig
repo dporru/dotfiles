@@ -1,17 +1,17 @@
 [user]
-	name = Martijn Arts
-	email = arts.martijn@gmail.com
+    name = Martijn Arts
+    email = arts.martijn@gmail.com
 [core]
-	editor = vim
+    editor = vim
 [push]
-	default = simple
+    default = simple
 [alias]
-	unstage = reset HEAD --
-	ci = commit
-	cim = commit -m
-	br = branch
-	st = status
-	co = checkout
+    unstage = reset HEAD --
+    ci = commit
+    cim = commit -m
+    br = branch
+    st = status
+    co = checkout
 [url "git@github.com:"]
     insteadOf = "gh:"
     pushInsteadOf = "github:"
