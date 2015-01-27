@@ -26,6 +26,7 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 # virtualenvwrapper config
 export WORKON_HOME=~/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 source /usr/bin/virtualenvwrapper.sh
 # thanks cjerdonek and justinabrahms @ https://gist.github.com/cjerdonek/7583644
 check_virtualenv() {
@@ -60,3 +61,5 @@ ssh_mosher () {
     eval "$SCRIPT $@"
 }
 alias ssh="ssh_mosher"
+
+export PATH="/home/martijn/.gem/ruby/2.2.0/bin:$PATH"

@@ -1,0 +1,3 @@
+source {{dotfiles}}/files/screenrc
+
+# Put machine-specific screen settings here

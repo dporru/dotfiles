@@ -1,0 +1,3 @@
+source {{dotfiles}}/files/vimrc
+
+" Put machine-specific vim settings here

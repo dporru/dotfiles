@@ -5,8 +5,10 @@ function help {
 echo <<EOF
 usage: $0 [options]
 
-This installs all files necessary to use these dotfiles, including symlinking
-the files correctly.
+This installs all files necessary to use these dotfiles. It creates symlinks to
+all files in the links/ directory and copies the files from the templates/
+directory. It also replaces any occurrence of {{dotfiles}} in the templates by
+the path to the dotfiles repository (so if you're moving it around, reinstall).
 
 OPTIONS:
   -h    Show this help messgae.
@@ -28,77 +30,54 @@ done
 
 ## FUNCTIONS
 function link {
-    read -p "Do you want to link ~/.$1 to ${DIR}/files/$1? "
-    if [[ $REPLY =~ ^[Yy]$ ]]
-    then
-        ln -s ${DIR}/files/$1 ~/.$1
+    read -p "Do you want to link ~/.$1 to ${DIR}/files/$1? [y/N] "
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        ln -s ${DIR}/links/$1 ~/.$1
+    fi
+}
+function copy {
+    read -p "Do you want to copy ${DIR}/files/$1 to ~/.$1? [y/N] "
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        cp ${DIR}/templates/$1 ~/.$1
+        sed -i "s/{{dotfiles}}/$(echo $DIR | sed -e 's/[\/&]/\\&/g')/g" ~/.$1
     fi
 }
 
-function remove {
-    read -p "Do you want to remove ~/.$1 (if linked to ${DIR}/files/$1)? "
-    if [[ $REPLY =~ ^[Yy]$ ]]
-    then
-        if [[ $(readlink ~/.$1) == "${DIR}/files/$1" ]]
-        then
+
+# Removes all installed links
+function remove_link {
+    if [[ $(readlink ~/.$1) == "${DIR}/links/$1" ]]; then
+        read -p "Do you want to remove ~/.$1? [y/N] "
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
             rm -f ~/.$1
-        else
-            echo "~/.$1 not linked to ${DIR}/files/$1 (but to $(readlink ~/.$1)"
         fi
     fi
 }
 
+
 ## MAIN
-# REMOVE
-if $REMOVE
-then
-    for file in ${DIR}/files/*; do
-        remove $(basename $file)
+function main {
+    # REMOVE
+    if $REMOVE; then
+        for file in ${DIR}/links/*; do
+            remove_link $(basename $file)
+        done
+
+        exit 1
+    fi
+
+    # LINK/COPY
+    for file in ${DIR}/links/*; do
+        link $(basename $file)
+    done
+    for file in ${DIR}/templates/*; do
+        copy $(basename $file)
     done
 
-    exit 1
-fi
-
-# LINK
-#read -p "Do you want to install the Powerline font patches (Linux only)? "
-#if [[ $REPLY =~ ^[Yy]$ ]]
-#then
-#    FONTURI=https://github.com/Lokaltog/powerline/raw/develop/font/
-#    wget ${FONTURI}PowerlineSymbols.otf \
-#        -O ~/.fonts/PowerlineSymbols.otf
-#    if [ -d "~/.fonts.conf.d/" ]
-#    then
-#        DEST="~/.fonts.conf.d/"
-#    elif [ -d "~/.config/fontconfig/conf.d/" ]
-#    then
-#        DEST="~/.config/fontconfig/conf.d/"
-#    else
-#        DEFAULT="$(echo ~)/.config/fontconfig/conf.d/"
-#        read -p "Where should I put 10-powerline-symbols.conf? [${DEFAULT}] "
-#        if [[ $REPLY == "" ]]
-#        then
-#            DEST=$DEFAULT
-#        else
-#            DEST=$REPLY
-#        fi
-#    fi
-#    if [ ! -d $DEST ]
-#    then
-#        mkdir --parents $DEST
-#    fi
-#    wget ${FONTURI}10-powerline-symbols.conf \
-#        -O ${DEST}10-powerline-symbols.conf
-#
-#    echo "You may need to restart your terminal emulator (or even X) before" \
-#         " this works"
-#fi
-
-for file in ${DIR}/files/*; do
-    link $(basename $file)
-done
-
-read -p "Do you want to install Vim plugins with Plug? "
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    vim +PlugInstall
-fi
+    # PLUG INSTALL
+    read -p "Do you want to install Vim plugins with Plug? [y/N] "
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        vim +PlugInstall
+    fi
+}
+main
