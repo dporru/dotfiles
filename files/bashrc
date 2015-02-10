@@ -5,6 +5,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# if variables not set, set variables!
+if [ -z "$VIRTUALENVWRAPPER_DIR" ]; then
+    export VIRTUALENVWRAPPER_DIR=/usr/bin/
+fi
+
 source ~/.bash/git-prompt
 source ~/.bash/colors
 
@@ -27,7 +32,7 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # virtualenvwrapper config
 export WORKON_HOME=~/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-source /usr/bin/virtualenvwrapper.sh
+source "$VIRTUALENVWRAPPER_DIR/virtualenvwrapper.sh"
 # thanks cjerdonek and justinabrahms @ https://gist.github.com/cjerdonek/7583644
 check_virtualenv() {
     if [ -e .venv ]; then
@@ -46,7 +51,7 @@ check_virtualenv
 alias cd="venv_cd"
 
 # fix for gnome-terminal new tab not opening working dir
-. /etc/profile.d/vte.sh
+#. /etc/profile.d/vte.sh
 
 # ssh alias to only use mosh when set in ssh config
 REAL_SSH=$(which ssh)
