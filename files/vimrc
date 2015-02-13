@@ -11,6 +11,8 @@ Plug 'pthrasher/conqueterm-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'davidhalter/jedi-vim'
 Plug 'ervandew/supertab'
+Plug 'bling/vim-bufferline'
+Plug 'nvie/vim-flake8'
 call plug#end()
 
 
@@ -30,6 +32,7 @@ set title          " Window title overwrite.
 set wildignore=*.swp,*.bak,*.pyc,*.class
                    " Ignore stupid files.
 set scrolloff=3    " Show three lines below the cursor.
+set ttyfast
 
 "" Grouped settings
 " Visible whitespace characters
@@ -39,6 +42,10 @@ set listchars=tab:»\ ,trail:·,extends:…,eol:¶
 " Less annoyances
 set visualbell
 set noerrorbells
+
+" Enable the mouse!
+set mouse=a
+set ttymouse=xterm2
 
 if v:version >= 703
   " Colored area after 80th character
@@ -87,7 +94,7 @@ map <Right> <NOP>
 
 " But Ctrl+Arrow switches between tabs!
 nnoremap <silent> <C-k> :new<CR>
-nnoremap <silent> <C-j> :bd<CR>
+nnoremap <silent> <C-j> :bp<bar>sp<bar>bn<bar>bd<CR>
 nnoremap <silent> <C-h> :bp<CR>
 nnoremap <silent> <C-l> :bn<CR>
 
@@ -107,7 +114,6 @@ vnoremap > >gv
 set laststatus=2
 " Disable fancy symbols by default.
 "let g:Powerline_symbols = 'fancy'
-let g:airline#extensions#tabline#enabled = 1
 
 if filereadable("~/.vim_custom")
     source ~/.vim_custom
@@ -117,16 +123,16 @@ endif
 highlight clear SignColumn
 
 " MiniBufExpl
-let g:miniBufExplMapWindowNavVim = 1 
-let g:miniBufExplMapWindowNavArrows = 1 
-let g:miniBufExplMapCTabSwitchBufs = 1 
-let g:miniBufExplModSelTarget = 1 
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
 
 " NERDTree
-autocmd vimenter * NERDTree
-autocmd VimEnter * wincmd p
-
 map <C-n> :NERDTreeToggle<CR>
 
 " Jedi
 let g:jedi#use_tabs_not_buffers = 0
+
+" vim-flake8
+autocmd BufWritePost *.py call Flake8()
