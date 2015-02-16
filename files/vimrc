@@ -118,7 +118,7 @@ nnoremap <silent> <C-h> :bp<CR>
 nnoremap <silent> <C-l> :bn<CR>
 
 " Clear searches with ,/
-nmap <silent> ,/ :nohlsearch<CR>
+nmap <silent> <leader>/ :nohlsearch<CR>
 
 " ,ev and ,sv to edit and reload .vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
