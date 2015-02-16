@@ -1,6 +1,6 @@
 """ vimrc
 " Run any command styled [cmd] by pressing Control+E.
-" [so $MYVIMRC] [Gstatus] [Gdiff]
+" [so $MYVIMRC | nohlsearch] [Gstatus] [Gdiff]
 nnoremap <C-e> "cyi[<CR>:@c<CR>
 
 set nocompatible               " be iMproved
