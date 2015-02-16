@@ -26,6 +26,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'Raimondi/delimitMate'
 
 " Language-specific
 Plug 'nvie/vim-flake8'
