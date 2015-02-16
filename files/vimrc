@@ -18,12 +18,12 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " Editing
-Plug 'ervandew/supertab'
-Plug 'msanders/snipmate.vim'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " Language-specific
 Plug 'nvie/vim-flake8'
-Plug 'davidhalter/jedi-vim'
 
 " Utility
 Plug 'pthrasher/conqueterm-vim'
