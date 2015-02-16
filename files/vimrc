@@ -163,3 +163,10 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 
 " Gundo
 map U :GundoToggle<CR>
+
+" YCM
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+let g:ycm_key_list_previous_completion=['<Up>']
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<c-j>"
