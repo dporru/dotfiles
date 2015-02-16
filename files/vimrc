@@ -134,10 +134,6 @@ set laststatus=2
 " Disable fancy symbols by default.
 "let g:Powerline_symbols = 'fancy'
 
-if filereadable("~/.vim_custom")
-    source ~/.vim_custom
-endif
-
 " GitGutter
 highlight clear SignColumn
 
