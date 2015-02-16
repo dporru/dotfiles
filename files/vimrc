@@ -2,19 +2,30 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-" Plug!
+"" Plug plugins
 call plug#begin('~/.vim/plugged')
-Plug 'bling/vim-airline'
-Plug 'airblade/vim-gitgutter'
+" Layout
 Plug 'vim-scripts/Zenburn'
-Plug 'pthrasher/conqueterm-vim'
-Plug 'scrooloose/nerdtree'
-Plug 'davidhalter/jedi-vim'
-Plug 'ervandew/supertab'
+Plug 'bling/vim-airline'
 Plug 'bling/vim-bufferline'
-Plug 'nvie/vim-flake8'
+
+" Files
 Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+
+" SVC
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+
+" Editing
+Plug 'ervandew/supertab'
+
+" Language-specific
+Plug 'nvie/vim-flake8'
+Plug 'davidhalter/jedi-vim'
+
+" Utility
+Plug 'pthrasher/conqueterm-vim'
 call plug#end()
 
 
