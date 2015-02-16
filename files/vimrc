@@ -53,6 +53,7 @@ set ttyfast
 " Visible whitespace characters
 set list
 set listchars=tab:»\ ,trail:·,extends:…,eol:¶
+set showbreak=↪
 
 " Less annoyances
 set visualbell
