@@ -27,6 +27,7 @@ Plug 'davidhalter/jedi-vim'
 
 " Utility
 Plug 'pthrasher/conqueterm-vim'
+Plug 'vim-scripts/Gundo'
 call plug#end()
 
 
@@ -153,3 +154,6 @@ autocmd BufWritePost *.py call Flake8()
 
 " CtrlP
 let g:ctrlp_cmd = 'CtrlPMixed'
+
+" Gundo
+map U :GundoToggle<CR>
