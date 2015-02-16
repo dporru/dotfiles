@@ -92,6 +92,9 @@ set smartcase
 set hlsearch
 
 "" (Re)maps
+" Who needs Ex mode?
+nnoremap Q <nop>
+
 " ; is way better than :
 map ; :
 noremap ;; ;
