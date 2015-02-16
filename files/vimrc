@@ -19,6 +19,7 @@ Plug 'tpope/vim-fugitive'
 
 " Editing
 Plug 'ervandew/supertab'
+Plug 'msanders/snipmate.vim'
 
 " Language-specific
 Plug 'nvie/vim-flake8'
