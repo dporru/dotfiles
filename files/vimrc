@@ -13,6 +13,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'ervandew/supertab'
 Plug 'bling/vim-bufferline'
 Plug 'nvie/vim-flake8'
+Plug 'kien/ctrlp.vim'
 call plug#end()
 
 
@@ -136,3 +137,6 @@ let g:jedi#use_tabs_not_buffers = 0
 
 " vim-flake8
 autocmd BufWritePost *.py call Flake8()
+
+" CtrlP
+let g:ctrlp_cmd = 'CtrlPMixed'
