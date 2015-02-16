@@ -1,8 +1,13 @@
-" vimrc
+""" vimrc
+" Run any command styled [cmd] by pressing Control+E.
+" [so $MYVIMRC] [Gstatus] [Gdiff]
+nnoremap <C-e> "cyi[<CR>:@c<CR>
+
 set nocompatible               " be iMproved
 filetype off                   " required!
 
 "" Plug plugins
+" [PlugInstall] [PlugClean]
 call plug#begin('~/.vim/plugged')
 " Layout
 Plug 'vim-scripts/Zenburn'
