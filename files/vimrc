@@ -67,7 +67,11 @@ set noerrorbells
 
 " Enable the mouse!
 set mouse=a
-set ttymouse=xterm2
+if has("mouse_sgr")
+    set ttymouse=sgr
+else
+    set ttymouse=xterm2
+end
 
 if v:version >= 703
   " Colored area after 80th character
