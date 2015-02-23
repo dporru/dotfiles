@@ -174,3 +174,8 @@ let g:ycm_key_list_previous_completion=['<Up>']
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-j>"
+
+
+"" Project-specific vimrc files
+set exrc
+set secure
