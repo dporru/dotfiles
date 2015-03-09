@@ -7,11 +7,14 @@
     default = simple
 [alias]
     unstage = reset HEAD --
+    graph = log --graph --pretty=oneline --decorate --branches=*
+
     ci = commit
     cim = commit -m
     br = branch
     st = status
     co = checkout
+
 [url "git@github.com:"]
     insteadOf = "gh:"
     pushInsteadOf = "github:"
