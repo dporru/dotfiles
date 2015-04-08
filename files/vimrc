@@ -31,6 +31,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
 
 " Language-specific
 Plug 'nvie/vim-flake8'
