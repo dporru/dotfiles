@@ -60,6 +60,7 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
                    " Ignore stupid files.
 set scrolloff=3    " Show three lines below the cursor.
 set ttyfast
+set showcmd
 
 "" Grouped settings
 " Visible whitespace characters
