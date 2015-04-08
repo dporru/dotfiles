@@ -186,7 +186,8 @@ let g:flake8_show_in_gutter = 1
 let g:flake8_show_in_file = 1
 
 " CtrlP
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
 
 " Gundo
 map U :GundoToggle<CR>
