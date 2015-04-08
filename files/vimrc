@@ -68,6 +68,11 @@ set list
 set listchars=tab:»\ ,trail:·,extends:…,eol:¶
 set showbreak=↪
 
+" Prettier and better splits, folds.
+set fillchars=vert:\│,fold:―
+set splitright
+set splitbelow
+
 " Less annoyances
 set visualbell
 set noerrorbells
@@ -108,6 +113,10 @@ set ignorecase
 set smartcase
 set hlsearch
 
+" Folding is cool
+set foldmethod=indent
+au BufRead * normal zR
+
 "" (Re)maps
 " Who needs Ex mode?
 nnoremap Q <nop>
@@ -144,6 +153,10 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR><leader>/
 " Reselect visual block after indent/outdent.
 vnoremap < <gv
 vnoremap > >gv
+
+" Space should open or create a fold
+nnoremap <space> za
+vnoremap <space> zf
 
 "" Plugins
 " Airline
