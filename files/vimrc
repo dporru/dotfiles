@@ -34,6 +34,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'AndrewRadev/sideways.vim'
+Plug 'tmhedberg/SimpylFold'
 
 " Language-specific
 Plug 'nvie/vim-flake8'
@@ -116,7 +117,7 @@ set hlsearch
 set incsearch
 
 " Folding is cool
-set foldmethod=indent
+set foldmethod=syntax
 au BufRead * normal zR
 
 "" (Re)maps
