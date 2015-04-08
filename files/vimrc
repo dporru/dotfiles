@@ -29,6 +29,7 @@ Plug 'tpope/vim-fugitive'
 " Editing
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-unimpaired'
 
 " Language-specific
 Plug 'nvie/vim-flake8'
