@@ -9,6 +9,9 @@ filetype off                   " required!
 "" Plug plugins
 " [PlugInstall] [PlugClean]
 call plug#begin('~/.vim/plugged')
+" Plugin plugins
+Plug 'tpope/vim-repeat'
+
 " Layout
 Plug 'vim-scripts/Zenburn'
 Plug 'bling/vim-airline'
