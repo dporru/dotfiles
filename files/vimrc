@@ -32,6 +32,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
+Plug 'AndrewRadev/sideways.vim'
 
 " Language-specific
 Plug 'nvie/vim-flake8'
@@ -179,6 +180,10 @@ let g:ycm_key_list_previous_completion=['<Up>']
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-j>"
+
+" Sideways
+nnoremap <leader>< :SidewaysLeft<cr>
+nnoremap <leader>> :SidewaysRight<cr>
 
 
 "" Project-specific vimrc files
