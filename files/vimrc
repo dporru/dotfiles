@@ -20,6 +20,7 @@ Plug 'bling/vim-bufferline'
 " Files
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " SVC
 Plug 'airblade/vim-gitgutter'
