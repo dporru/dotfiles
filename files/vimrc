@@ -182,6 +182,8 @@ let g:jedi#use_tabs_not_buffers = 0
 
 " vim-flake8
 autocmd BufWritePost *.py call Flake8()
+let g:flake8_show_in_gutter = 1
+let g:flake8_show_in_file = 1
 
 " CtrlP
 let g:ctrlp_cmd = 'CtrlPMixed'
