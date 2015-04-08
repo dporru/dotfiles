@@ -112,6 +112,7 @@ set shiftround
 set ignorecase
 set smartcase
 set hlsearch
+set incsearch
 
 " Folding is cool
 set foldmethod=indent
