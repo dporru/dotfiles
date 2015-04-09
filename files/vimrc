@@ -15,7 +15,6 @@ Plug 'tpope/vim-repeat'
 " Layout
 Plug 'vim-scripts/Zenburn'
 Plug 'bling/vim-airline'
-Plug 'bling/vim-bufferline'
 
 " Files
 Plug 'ctrlpvim/ctrlp.vim'
