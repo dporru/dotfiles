@@ -206,9 +206,6 @@ map U :GundoToggle<CR>
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 let g:ycm_key_list_previous_completion=['<Up>']
 
-" UltiSnips
-let g:UltiSnipsExpandTrigger="<c-j>"
-
 " Sideways
 nnoremap <leader>< :SidewaysLeft<cr>
 nnoremap <leader>> :SidewaysRight<cr>
