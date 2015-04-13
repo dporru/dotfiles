@@ -7,7 +7,7 @@
     default = simple
 [alias]
     unstage = reset HEAD --
-    graph = log --graph --pretty=oneline --decorate --branches=*
+    graph = log --graph --pretty=format:\"%C(yellow)[%C(red)%h %C(yellow)%an%C(reset)%C(yellow)] %C(reset)%C(cyan)%d%Creset %C(white)%s\" --decorate --branches=*
 
     ci = commit
     cim = commit -m
