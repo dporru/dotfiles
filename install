@@ -32,7 +32,11 @@ done
 function link {
     read -p "Do you want to link ~/.$1 to ${DIR}/files/$1? [y/N] "
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        ln -s ${DIR}/links/$1 ~/.$1
+        if [[ -L ~/.$1 ]];  then
+            echo "Symlink already present"
+        else
+            ln -s ${DIR}/links/$1 ~/.$1
+        fi
     fi
 }
 function copy {
