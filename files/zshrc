@@ -1,0 +1,17 @@
+autoload -U compinit && compinit
+zmodload -i zsh/complist
+autoload -U promptinit && promptinit
+
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# an example prompt
+PROMPT='%B%m%~%b%# '
+
+export HISTFILE=~/.zsh_history
+export SAVEHIST=1000
+export HISTSIZE=1000
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY
+
+export PATH="/usr/local/sbin:$PATH"

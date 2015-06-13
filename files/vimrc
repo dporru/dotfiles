@@ -29,7 +29,6 @@ Plug 'tpope/vim-fugitive'
 " Editing
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 Plug 'Raimondi/delimitMate'
-Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'AndrewRadev/sideways.vim'
@@ -123,42 +122,14 @@ au BufRead * normal zR
 " Who needs Ex mode?
 nnoremap Q <nop>
 
-" ; is way better than :
-map ; :
-noremap ;; ;
-
-" , is a better leader than \
-let mapleader=","
-
 " Pasting? Press F2 first!
 set pastetoggle=<F2>
 
-" No arrow keys.
-map <Up> <NOP>
-map <Down> <NOP>
-map <Left> <NOP>
-map <Right> <NOP>
-
 " But Ctrl+Arrow switches between buffers!
-nnoremap <silent> <C-k> :new<CR>
-nnoremap <silent> <C-j> :bp<bar>sp<bar>bn<bar>bd<CR>
-nnoremap <silent> <C-h> :bp<CR>
-nnoremap <silent> <C-l> :bn<CR>
-
-" Clear searches with ,/
-nmap <silent> <leader>/ :nohlsearch<CR>
-
-" ,ev and ,sv to edit and reload .vimrc
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR><leader>/
-
-" Reselect visual block after indent/outdent.
-vnoremap < <gv
-vnoremap > >gv
-
-" Space should open or create a fold
-nnoremap <space> za
-vnoremap <space> zf
+nnoremap <silent> <C-Up> :new<CR>
+nnoremap <silent> <C-Down> :bp<bar>sp<bar>bn<bar>bd<CR>
+nnoremap <silent> <C-Left> :bp<CR>
+nnoremap <silent> <C-Right> :bn<CR>
 
 "" Plugins
 " Airline
@@ -208,7 +179,6 @@ let g:ycm_key_list_previous_completion=['<Up>']
 " Sideways
 nnoremap <leader>< :SidewaysLeft<cr>
 nnoremap <leader>> :SidewaysRight<cr>
-
 
 "" Project-specific vimrc files
 set exrc

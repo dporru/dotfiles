@@ -1,4 +1,6 @@
-# Totem's dotfiles
+# Dotfiles
+
+Based on TotempaaltJ's dotfiles, with some modifications.
 
 I have dotfiles (as every Linux user does) and I like them the same
 everywhere. I also like low setup times, and highly customized settings.
