@@ -43,3 +43,6 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+# Fix python crash with vim and YCM plugin
+export DYLD_FORCE_FLAT_NAMESPACE=1

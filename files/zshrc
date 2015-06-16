@@ -14,4 +14,7 @@ setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY
 setopt EXTENDED_HISTORY
 
+# Fix python crash with vim and YCM plugin
+export DYLD_FORCE_FLAT_NAMESPACE=1
+
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
