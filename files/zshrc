@@ -3,9 +3,10 @@ zmodload -i zsh/complist
 autoload -U promptinit && promptinit
 
 fpath=(/usr/local/share/zsh-completions $fpath)
+source ~/zsh/zsh-git-prompt/zshrc.sh
 
 # an example prompt
-PROMPT='%B%m%~%b%# '
+PROMPT='%B%m%~%b$(git_super_status) %# '
 
 export HISTFILE=~/.zsh_history
 export SAVEHIST=1000
