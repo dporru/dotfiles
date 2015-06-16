@@ -43,7 +43,7 @@ function copy {
     read -p "Do you want to copy ${DIR}/files/$1 to ~/.$1? [y/N] "
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         cp ${DIR}/templates/$1 ~/.$1
-        sed -i "s/{{dotfiles}}/$(echo $DIR | sed -e 's/[\/&]/\\&/g')/g" ~/.$1
+        sed -i -e "s/{{dotfiles}}/$(echo $DIR | sed -e 's/[\/&]/\\&/g')/g" ~/.$1
     fi
 }
 
