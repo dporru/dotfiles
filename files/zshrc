@@ -4,9 +4,9 @@ autoload -U promptinit && promptinit
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 source ~/zsh/zsh-git-prompt/zshrc.sh
+source ~/.zsh/colors
 
-# an example prompt
-PROMPT='%B%m%~%b$(git_super_status) %# '
+PROMPT='${C_EMR}%(0?..%? )${C_G}%n@%m${C_HB}:%~${C_N}$(git_super_status)%# '
 
 export HISTFILE=~/.zsh_history
 export SAVEHIST=1000
