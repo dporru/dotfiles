@@ -1,34 +1,34 @@
-C_N='\[\033[0m%}'    # unsets color to term's fg color']'
+C_N='\[\033[0m%}'    # unsets color to term%}'s fg color']'
 
 # regular colors
-C_N=$'\e[0;0m'     # normal
-C_K=$'\e[0;30m'    # black
-C_R=$'\e[0;31m'    # red
-C_G=$'\e[0;32m'    # green
-C_Y=$'\e[0;33m'    # yellow
-C_HY=$'\e[01;33m'  # Highligted yellow
-C_B=$'\e[0;34m'    # blue
-C_HB=$'\e[01;34m'  # Highlighted blue
-C_M=$'\e[0;35m'    # magenta
-C_C=$'\e[0;36m'    # cyan
-C_W=$'\e[0;37m'    # white
+C_N=$'%{\e[0;0m%}'     # normal
+C_K=$'%{\e[0;30m%}'    # black
+C_R=$'%{\e[0;31m%}'    # red
+C_G=$'%{\e[0;32m%}'    # green
+C_Y=$'%{\e[0;33m%}'    # yellow
+C_HY=$'%{\e[01;33m%}'  # Highligted yellow
+C_B=$'%{\e[0;34m%}'    # blue
+C_HB=$'%{\e[01;34m%}'  # Highlighted blue
+C_M=$'%{\e[0;35m%}'    # magenta
+C_C=$'%{\e[0;36m%}'    # cyan
+C_W=$'%{\e[0;37m%}'    # white
 
 # emphasized (bolded) colors
-C_EMK=$'\e[1;30m'
-C_EMR=$'\e[1;31m'
-C_EMG=$'\e[1;32m'
-C_EMY=$'\e[1;33m'
-C_EMB=$'\e[1;34m'
-C_EMM=$'\e[1;35m'
-C_EMC=$'\e[1;36m'
-C_EMW=$'\e[1;37m'
+C_EMK=$'%{\e[1;30m%}'
+C_EMR=$'%{\e[1;31m%}'
+C_EMG=$'%{\e[1;32m%}'
+C_EMY=$'%{\e[1;33m%}'
+C_EMB=$'%{\e[1;34m%}'
+C_EMM=$'%{\e[1;35m%}'
+C_EMC=$'%{\e[1;36m%}'
+C_EMW=$'%{\e[1;37m%}'
 
 # background colors
-C_BGK=$'\e[40m'
-C_BGR=$'\e[41m'
-C_BGG=$'\e[42m'
-C_BGY=$'\e[43m'
-C_BGB=$'\e[44m'
-C_BGM=$'\e[45m'
-C_BGC=$'\e[46m'
-C_BGW=$'\e[47m'
+C_BGK=$'%{\e[40m%}'
+C_BGR=$'%{\e[41m%}'
+C_BGG=$'%{\e[42m%}'
+C_BGY=$'%{\e[43m%}'
+C_BGB=$'%{\e[44m%}'
+C_BGM=$'%{\e[45m%}'
+C_BGC=$'%{\e[46m%}'
+C_BGW=$'%{\e[47m%}'
