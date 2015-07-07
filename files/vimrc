@@ -126,10 +126,10 @@ nnoremap Q <nop>
 set pastetoggle=<F2>
 
 " But Ctrl+Arrow switches between buffers!
-nnoremap <silent> <C-Up> :new<CR>
-nnoremap <silent> <C-Down> :bp<bar>sp<bar>bn<bar>bd<CR>
-nnoremap <silent> <C-Left> :bp<CR>
-nnoremap <silent> <C-Right> :bn<CR>
+nnoremap <silent> <C-k> :new<CR>
+nnoremap <silent> <C-j> :bp<bar>sp<bar>bn<bar>bd<CR>
+nnoremap <silent> <C-l> :bp<CR>
+nnoremap <silent> <C-h> :bn<CR>
 
 "" Plugins
 " Airline
