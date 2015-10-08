@@ -40,6 +40,7 @@ Plug 'nvie/vim-flake8'
 " Utility
 Plug 'pthrasher/conqueterm-vim'
 Plug 'vim-scripts/Gundo'
+Plug 'tmhedberg/matchit'
 call plug#end()
 
 
