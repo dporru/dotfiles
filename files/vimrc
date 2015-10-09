@@ -41,6 +41,7 @@ Plug 'nvie/vim-flake8'
 Plug 'pthrasher/conqueterm-vim'
 Plug 'vim-scripts/Gundo'
 Plug 'tmhedberg/matchit'
+Plug 'vim-scripts/taglist.vim'
 call plug#end()
 
 
