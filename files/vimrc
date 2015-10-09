@@ -150,6 +150,7 @@ let g:miniBufExplModSelTarget = 1
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$']
 
 " Jedi
 let g:jedi#use_tabs_not_buffers = 0
