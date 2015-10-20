@@ -138,6 +138,9 @@ nnoremap <silent> <C-j> :bp<bar>sp<bar>bn<bar>bd<CR>
 nnoremap <silent> <C-l> :bp<CR>
 nnoremap <silent> <C-h> :bn<CR>
 
+" Clear searches with ,/
+nmap <silent> <leader>/ :nohlsearch<CR>
+
 "" Plugins
 " Airline
 set laststatus=2
