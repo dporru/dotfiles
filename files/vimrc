@@ -126,6 +126,9 @@ au BufRead * normal zR
 " Who needs Ex mode?
 nnoremap Q <nop>
 
+" , is a better leader than \
+let mapleader=","
+
 " Pasting? Press F2 first!
 set pastetoggle=<F2>
 
