@@ -44,6 +44,7 @@ Plug 'tmhedberg/matchit'
 Plug 'vim-scripts/taglist.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'rking/ag.vim'
 call plug#end()
 
 
