@@ -66,6 +66,7 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set scrolloff=3    " Show three lines below the cursor.
 set ttyfast
 set showcmd
+set cursorline     " Highlight current line
 
 "" Grouped settings
 " Visible whitespace characters
