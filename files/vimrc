@@ -42,7 +42,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'pthrasher/conqueterm-vim'
 Plug 'vim-scripts/Gundo'
 Plug 'tmhedberg/matchit'
-Plug 'vim-scripts/taglist.vim'
+Plug 'vim-scripts/taglist.vim'          " Source code browser
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'rking/ag.vim'
