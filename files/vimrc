@@ -158,10 +158,6 @@ vnoremap <space> zf
 vnoremap < <gv
 vnoremap > >gv
 
-" move to beginning/end of line
-nnoremap B ^
-nnoremap E $
-
 "" Plugins
 " Airline
 set laststatus=2
@@ -222,13 +218,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " Sideways
 nnoremap <leader>< :SidewaysLeft<cr>
 nnoremap <leader>> :SidewaysRight<cr>
-
-" Multiple cursors
-let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_next_key='<C-a>'
-let g:multi_cursor_prev_key='<C-p>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
 
 "" Project-specific vimrc files
 set exrc
