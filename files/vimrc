@@ -147,6 +147,7 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 
 " ,ev and ,sv to edit and reload .vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>evd :e ~/dotfiles/files/vimrc<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR><leader>/
 
 " Space should open or create a fold
