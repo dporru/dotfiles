@@ -185,6 +185,13 @@ let g:jedi#use_tabs_not_buffers = 0
 autocmd BufWritePost *.py call Flake8()
 let g:flake8_show_in_gutter = 1
 let g:flake8_show_in_file = 1
+let g:flake8_error_marker='💥'
+let g:flake8_warning_marker='❗'
+let g:flake8_pyflake_marker='➡️'
+
+highlight link Flake8_Error GitGutterChangeDefault
+highlight link Flake8_Warning GitGutterChangeDefault
+highlight link Flake8_PyFlake GitGutterChangeDefault
 
 " CtrlP
 let g:ctrlp_cmd = 'CtrlP'
