@@ -37,6 +37,8 @@ Plug 'tmhedberg/SimpylFold'
 " Language-specific
 Plug 'nvie/vim-flake8'
 Plug 'kchmck/vim-coffee-script'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 " Utility
 Plug 'pthrasher/conqueterm-vim'
