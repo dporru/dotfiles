@@ -40,6 +40,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'alfredodeza/pytest.vim'
+Plug 'https://github.com/rust-lang/rust.vim.git'
 
 " Utility
 Plug 'pthrasher/conqueterm-vim'
@@ -240,6 +241,10 @@ let g:multi_cursor_quit_key='<Esc>'
 " Sideways
 nnoremap <leader>< :SidewaysLeft<cr>
 nnoremap <leader>> :SidewaysRight<cr>
+
+" Rust
+nnoremap <leader>cr :w<CR>:!cargo run<CR>
+nnoremap <leader>cb :w<CR>:!cargo build<CR>
 
 "" Project-specific vimrc files
 set exrc
