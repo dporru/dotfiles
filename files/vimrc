@@ -142,10 +142,13 @@ let mapleader=","
 set pastetoggle=<F2>
 
 " But Ctrl+Arrow switches between buffers!
-nnoremap <silent> <C-k> :new<CR>
-nnoremap <silent> <C-j> :bp<bar>sp<bar>bn<bar>bd<CR>
-nnoremap <silent> <C-l> :bp<CR>
-nnoremap <silent> <C-h> :bn<CR>
+nnoremap <silent> <C-x> :bp<bar>sp<bar>bn<bar>bd<CR>
+
+" easier window navigation
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
 
 " Clear searches with ,/
 nmap <silent> <leader>/ :nohlsearch<CR>
