@@ -39,6 +39,7 @@ Plug 'nvie/vim-flake8'
 Plug 'kchmck/vim-coffee-script'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'alfredodeza/pytest.vim'
 
 " Utility
 Plug 'pthrasher/conqueterm-vim'
@@ -194,6 +195,11 @@ let g:flake8_pyflake_marker='➡️'
 highlight link Flake8_Error GitGutterChangeDefault
 highlight link Flake8_Warning GitGutterChangeDefault
 highlight link Flake8_PyFlake GitGutterChangeDefault
+
+" Pytest.vim
+nmap <silent><Leader>t <Esc>:Pytest project<CR>
+nmap <silent><Leader>tf <Esc>:Pytest file<CR>
+nmap <silent><Leader>tt <Esc>:Pytest function<CR>
 
 " CtrlP
 let g:ctrlp_cmd = 'CtrlP'
