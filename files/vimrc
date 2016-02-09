@@ -247,8 +247,8 @@ nnoremap <leader>< :SidewaysLeft<cr>
 nnoremap <leader>> :SidewaysRight<cr>
 
 " Rust
-nnoremap <leader>cr :w<CR>:!cargo run<CR>
-nnoremap <leader>cb :w<CR>:!cargo build<CR>
+nnoremap <leader>rr :w<CR>:!cargo run<CR>
+nnoremap <leader>rb :w<CR>:!cargo build<CR>
 
 "" Project-specific vimrc files
 set exrc
