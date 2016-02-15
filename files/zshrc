@@ -19,3 +19,8 @@ setopt EXTENDED_HISTORY
 export DYLD_FORCE_FLAT_NAMESPACE=1
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
+# Add Cargo binaries to PATH
+if [ -d "$HOME/.cargo/bin" ] ; then
+    PATH="$PATH:$HOME/.cargo/bin"
+fi
