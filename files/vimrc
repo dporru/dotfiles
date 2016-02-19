@@ -14,7 +14,8 @@ Plug 'tpope/vim-repeat'
 
 " Layout
 Plug 'vim-scripts/Zenburn'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Files
 Plug 'ctrlpvim/ctrlp.vim'
@@ -27,7 +28,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " Editing
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
@@ -170,8 +171,13 @@ vnoremap > >gv
 " Airline
 set laststatus=2
 let g:airline_theme="hybridline"
-" Disable fancy symbols by default.
-"let g:Powerline_symbols = 'fancy'
+
+let g:airline#extensions#tabline#enabled = 2
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#right_sep = ' '
+let g:airline#extensions#tabline#right_alt_sep = '|'
 
 " GitGutter
 highlight clear SignColumn
@@ -212,10 +218,12 @@ let g:ctrlp_working_path_mode = 'ra'
 
 " CtrlP perfomance improvements are awesome
 let g:ctrlp_match_func = {'match': 'pymatcher#PyMatch'}
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_clear_cache_on_exit = 0
+" Use ag over grep
 if executable("ag")
-    set grepprg=ag\ --nogroup\ --nocolor
-    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
 " Gundo
