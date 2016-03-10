@@ -34,9 +34,9 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'AndrewRadev/sideways.vim'
 Plug 'tmhedberg/SimpylFold'
+Plug 'scrooloose/syntastic'
 
 " Language-specific
-Plug 'nvie/vim-flake8'
 Plug 'kchmck/vim-coffee-script'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -172,12 +172,22 @@ vnoremap > >gv
 set laststatus=2
 let g:airline_theme="hybridline"
 
-let g:airline#extensions#tabline#enabled = 2
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#right_sep = ' '
 let g:airline#extensions#tabline#right_alt_sep = '|'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
 
 " GitGutter
 highlight clear SignColumn
@@ -194,18 +204,6 @@ let NERDTreeIgnore = ['\.pyc$']
 
 " Jedi
 let g:jedi#use_tabs_not_buffers = 0
-
-" vim-flake8
-autocmd BufWritePost *.py call Flake8()
-let g:flake8_show_in_gutter = 1
-let g:flake8_show_in_file = 1
-let g:flake8_error_marker='💥'
-let g:flake8_warning_marker='❗'
-let g:flake8_pyflake_marker='➡️'
-
-highlight link Flake8_Error GitGutterChangeDefault
-highlight link Flake8_Warning GitGutterChangeDefault
-highlight link Flake8_PyFlake GitGutterChangeDefault
 
 " Pytest.vim
 nmap <silent><Leader>t <Esc>:Pytest project<CR>
@@ -257,6 +255,18 @@ nnoremap <leader>> :SidewaysRight<cr>
 " Rust
 nnoremap <leader>rr :w<CR>:!cargo run<CR>
 nnoremap <leader>rb :w<CR>:!cargo build<CR>
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_python_checkers = ['flake8']
 
 "" Project-specific vimrc files
 set exrc
