@@ -55,6 +55,7 @@ Plug 'honza/vim-snippets'
 Plug 'rking/ag.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'manuel-colmenero/vim-simple-session'
+Plug 'wellle/targets.vim'
 call plug#end()
 
 
