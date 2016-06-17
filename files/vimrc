@@ -170,6 +170,10 @@ vnoremap <space> zf
 vnoremap < <gv
 vnoremap > >gv
 
+" Session settings
+set ssop-=options    " do not store global and local values in a session
+set ssop-=folds      " do not store folds
+
 "" Plugins
 " Airline
 set laststatus=2
