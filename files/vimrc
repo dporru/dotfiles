@@ -168,6 +168,11 @@ nnoremap <silent><leader>l :set rnu! rnu? <cr>
 autocmd InsertEnter,FocusLost,WinLeave,CmdwinLeave * silent! :set norelativenumber
 autocmd InsertLeave,FocusGained,WinEnter,BufEnter,CmdwinEnter * silent! :set relativenumber
 
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+
 " Space should open or create a fold
 nnoremap <space> za
 vnoremap <space> zf
