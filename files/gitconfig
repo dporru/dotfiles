@@ -1,3 +1,5 @@
+[init]
+    templatedir = ~/.git_template
 [core]
     editor = vim
 [push]
