@@ -227,7 +227,7 @@ if executable('fzf')
     nnoremap <C-p> :FZF -m<cr>
 
     if executable('ag')
-        let $FZF_DEFAULT_COMMAND = 'ag -l -u -g "" --ignore ".git"'
+        let $FZF_DEFAULT_COMMAND = 'ag -l --hidden -U -g "" --ignore ".git"'
     endif
 else
     " CtrlP
