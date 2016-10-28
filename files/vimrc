@@ -170,7 +170,10 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR><leader>/
 set rnu
 nnoremap <silent><leader>l :set rnu! rnu? <cr>
 autocmd InsertEnter,FocusLost,WinLeave,CmdwinLeave * silent! :set norelativenumber
-autocmd InsertLeave,FocusGained,WinEnter,BufEnter,CmdwinEnter * silent! :set relativenumber
+autocmd InsertLeave,FocusGained,WinEnter,BufEnter,CmdwinEnter * if &ft != 'nerdtree' && getfsize(expand("<afile>")) < 10 * 1024 * 1024 | silent! :set relativenumber | endif
+
+" Disable features for large files
+autocmd BufWinEnter * if line2byte(line('$') + 1) > 10 * 1024 * 1024 | syntax clear | setlocal nornu nonumber | let b:airline_whitespace_disabled = 1 | endif
 
 noremap <Up> <nop>
 noremap <Down> <nop>
