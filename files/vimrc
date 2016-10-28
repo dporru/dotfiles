@@ -184,6 +184,9 @@ noremap <Right> <nop>
 nnoremap <space> za
 vnoremap <space> zf
 
+" Make Y yank to end of line
+nnoremap Y y$
+
 " Session settings
 set ssop-=options    " do not store global and local values in a session
 set ssop-=folds      " do not store folds
