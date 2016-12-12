@@ -12,17 +12,21 @@ the path to the dotfiles repository (so if you're moving it around, reinstall).
 
 OPTIONS:
   -h    Show this help messgae.
+  -a    Automated mode, no interaction.
   -r    Uninstall.
 EOF
 }
 
 REMOVE=false
+AUTO=false
 YES=false
-while getopts "rh" OPTION
+while getopts "rah" OPTION
 do
     case $OPTION in
         r)
             REMOVE=true;;
+        a)
+            AUTO=true;;
         h)
             help;;
     esac
@@ -30,8 +34,10 @@ done
 
 ## FUNCTIONS
 function link {
-    read -p "Do you want to link ~/.$1 to ${DIR}/files/$1? [y/N] "
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
+    if [[ $AUTO != true ]]; then
+        read -p "Do you want to link ~/.$1 to ${DIR}/files/$1? [y/N] "
+    fi
+    if [[ $AUTO == true ]] || [[ $REPLY =~ ^[Yy]$ ]]; then
         if [[ -L ~/.$1 ]];  then
             echo "Symlink already present"
         else
@@ -40,8 +46,10 @@ function link {
     fi
 }
 function copy {
-    read -p "Do you want to copy ${DIR}/files/$1 to ~/.$1? [y/N] "
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
+    if [[ $AUTO !=  true ]]; then
+        read -p "Do you want to copy ${DIR}/files/$1 to ~/.$1? [y/N] "
+    fi
+    if [[ $AUTO == true ]] || [[ $REPLY =~ ^[Yy]$ ]]; then
         cp ${DIR}/templates/$1 ~/.$1
         sed -i -e "s/{{dotfiles}}/$(echo $DIR | sed -e 's/[\/&]/\\&/g')/g" ~/.$1
     fi
@@ -79,9 +87,13 @@ function main {
     done
 
     # PLUG INSTALL
-    read -p "Do you want to install Vim plugins with Plug? [y/N] "
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        vim +PlugInstall
+    if $AUTO; then
+        vim +silent +VimEnter +PlugInstall +qall
+    else
+        read -p "Do you want to install Vim plugins with Plug? [y/N] "
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            vim +PlugInstall
+        fi
     fi
 }
 main
