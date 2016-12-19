@@ -88,11 +88,11 @@ function main {
 
     # PLUG INSTALL
     if $AUTO; then
-        vim +silent +VimEnter +PlugInstall +qall
+        vim +silent +VimEnter +PlugInstall +qall -u ~/.vim/vimrc_plug
     else
         read -p "Do you want to install Vim plugins with Plug? [y/N] "
         if [[ $REPLY =~ ^[Yy]$ ]]; then
-            vim +PlugInstall
+            vim +PlugInstall -u ~/.vim/vimrc_plug
         fi
     fi
 }
