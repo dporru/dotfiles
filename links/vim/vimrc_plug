@@ -43,6 +43,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'alfredodeza/pytest.vim'
 Plug 'https://github.com/rust-lang/rust.vim.git'
 Plug 'hynek/vim-python-pep8-indent'
+Plug 'mrk21/yaml-vim'
+Plug 'pearofducks/ansible-vim'
 
 " Utility
 Plug 'pthrasher/conqueterm-vim'
