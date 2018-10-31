@@ -46,6 +46,7 @@ Plug 'https://github.com/rust-lang/rust.vim.git'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'mrk21/yaml-vim'
 Plug 'pearofducks/ansible-vim'
+Plug 'chase/vim-ansible-yaml'
 
 " Utility
 Plug 'pthrasher/conqueterm-vim'
