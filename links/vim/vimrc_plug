@@ -24,6 +24,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " SVC
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'shumphrey/fugitive-gitlab.vim'
 
 " Editing
 Plug 'Valloric/YouCompleteMe'
